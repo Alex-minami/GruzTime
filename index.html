@@ -1,291 +1,32 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GruzTime — персонал и ПРР для складов, РЦ и производств</title>
-  <meta name="description" content="GruzTime — погрузочно-разгрузочные работы, аутсорсинг линейного персонала, складские переезды и такелаж для юридических лиц и ИП в Москве и Московской области." />
-  <meta name="theme-color" content="#32b52d" />
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GruzTime — ПРР и персонал для складов, РЦ и производств</title>
+<meta name="description" content="Погрузочно-разгрузочные работы, аутсорсинг персонала, складские переезды и такелаж для юридических лиц и ИП в Москве и Московской области.">
+<style>
+:root{--g:#32b52d;--gd:#238f20;--gs:#eef8ec;--ink:#171b18;--muted:#69716a;--line:#e4e9e4;--red:#e95757;--r:16px;--w:1280px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.45}a{text-decoration:none;color:inherit}.container{width:min(var(--w),calc(100% - 48px));margin:auto}.header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{height:70px;display:flex;align-items:center;gap:28px}.logo{font-size:25px;font-weight:850;letter-spacing:-.7px}.logo span{color:var(--g)}.menu{display:flex;gap:26px;margin-left:28px;flex:1;font-size:13px;color:#4b544c}.menu a:hover{color:var(--gd)}.phone{font-weight:750;white-space:nowrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:46px;padding:0 20px;border-radius:8px;border:1px solid transparent;font-size:14px;font-weight:750;cursor:pointer}.btn.green{background:var(--g);color:#fff}.btn.green:hover{background:var(--gd)}.btn.white{border-color:#dfe5df;background:#fff}.burger,.mobile{display:none}
+.hero{border-bottom:1px solid #edf1ed}.hero-grid{display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:34px;min-height:560px;padding:34px 0}.hero h1{font-size:clamp(43px,4vw,62px);line-height:1.06;letter-spacing:-2px;margin:0 0 22px}.hero h1 em{font-style:normal;color:var(--g)}.lead{font-size:16px;color:#586159;max-width:610px;margin:0 0 20px}.proof{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:15px}.proof div{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:12px;font-weight:700}.ico{width:28px;height:28px;border-radius:7px;background:var(--gs);display:grid;place-items:center;color:var(--gd);font-weight:900}.business{display:flex;gap:10px;align-items:flex-start;max-width:610px;padding:11px 13px;border-radius:9px;border:1px solid #d9ebd6;background:var(--gs);font-size:12px;color:#3d4b3e}.business b{color:#243526}.hero-actions{display:flex;gap:12px;margin-top:18px}.hero-art{min-height:510px;display:flex;align-items:center}.hero-art svg{width:100%;height:auto}.section{padding:54px 0}.section h2{font-size:30px;text-align:center;letter-spacing:-.9px;margin:0 0 25px}
+.fit{padding-top:30px}.fit-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:15px}.fit-card{border:1px solid var(--line);border-radius:14px;text-align:center;padding:16px 10px;background:#fff;min-height:154px}.fit-card h3{font-size:14px;margin:8px 0 0;line-height:1.25}.mini{height:82px;width:115px;margin:auto;position:relative}.mini:before,.mini:after,.mini span,.mini i{content:"";position:absolute;display:block}.wh:before{left:17px;top:26px;width:72px;height:44px;background:#eef2ee;border:3px solid #bdc7bd}.wh:after{left:18px;top:14px;border-left:38px solid transparent;border-right:38px solid transparent;border-bottom:20px solid #72c960}.wh span{left:29px;top:45px;width:24px;height:25px;background:#6ac558;box-shadow:31px 3px 0 #9bdc8c}.dc:before{left:4px;top:27px;width:77px;height:42px;background:#eef2ee;border:3px solid #bdc7bd}.dc:after{left:5px;top:15px;border-left:41px solid transparent;border-right:41px solid transparent;border-bottom:18px solid #68c356}.dc span{right:2px;bottom:9px;width:49px;height:27px;background:#f2f4f2;border:3px solid #cbd2cb}.dc i{right:5px;bottom:3px;width:9px;height:9px;background:#465047;border-radius:50%;box-shadow:-31px 0 0 #465047}.factory:before{left:12px;top:29px;width:83px;height:42px;background:#e9eee8}.factory:after{left:21px;top:10px;width:13px;height:26px;background:#bfc8bf;box-shadow:26px 5px 0 #bfc8bf}.factory span{left:16px;top:42px;width:24px;height:29px;background:#67c254;box-shadow:32px 4px 0 #8bd57a,64px -3px 0 #55b748}.retail:before{left:8px;top:31px;width:94px;height:42px;background:#eef2ee;border:3px solid #c1cac1}.retail:after{left:7px;top:21px;width:98px;height:15px;background:repeating-linear-gradient(90deg,#65c253 0 18px,#eef2ed 18px 29px)}.retail span{left:26px;top:48px;width:22px;height:25px;background:#fff;border:2px solid #ccd3cc}.truck:before{left:3px;top:33px;width:65px;height:34px;background:#e8eee9}.truck:after{left:68px;top:42px;width:34px;height:25px;background:#68c457;border-radius:3px 7px 3px 3px}.truck span{left:15px;top:66px;width:10px;height:10px;border-radius:50%;background:#424c43;box-shadow:58px 0 0 #424c43}
+.services{padding-top:20px}.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.service{border:1px solid var(--line);border-radius:14px;padding:19px;background:#fff;min-height:205px;display:flex;flex-direction:column}.service .sico{width:38px;height:38px;border-radius:8px;background:var(--g);color:#fff;display:grid;place-items:center;font-weight:900;margin-bottom:14px}.service h3{font-size:16px;line-height:1.22;margin:0 0 9px}.service p{font-size:12px;line-height:1.55;color:var(--muted);margin:0 0 10px}.service a{color:var(--gd);font-size:23px;font-weight:900;margin-top:auto}.advantages{padding-top:28px}.adv-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.adv{border:1px solid var(--line);border-radius:13px;padding:15px 12px;min-height:145px}.adv .aico{width:31px;height:31px;border-radius:50%;background:var(--gs);color:var(--gd);display:grid;place-items:center;font-weight:900;margin-bottom:9px}.adv h3{font-size:13px;line-height:1.22;margin:0 0 7px}.adv p{font-size:11px;line-height:1.42;color:#737b74;margin:0}.process{padding-top:30px}.steps{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:9px;align-items:stretch}.step{border:1px solid var(--line);border-radius:13px;padding:15px;display:flex;gap:11px}.step .num{width:36px;height:36px;flex:0 0 36px;border-radius:8px;background:var(--gs);display:grid;place-items:center;color:var(--gd);font-weight:900}.step h3{font-size:14px;margin:0 0 4px}.step p{font-size:11px;color:#737b74;margin:0}.arrow{align-self:center;color:#bcc3bc;font-size:21px}.cases{padding-top:28px}.case-note{text-align:center;font-size:12px;color:#7b837c;margin:-16px 0 22px}.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.case{border:1px solid var(--line);border-radius:14px;overflow:hidden;display:grid;grid-template-columns:128px 1fr;min-height:180px}.case-art{position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:11px;background:linear-gradient(135deg,#3a513a,#8eb78a)}.case-art.trucks{background:linear-gradient(135deg,#516158,#b5c0b7)}.case-art.team{background:linear-gradient(135deg,#334335,#829884)}.case-art span{color:#fff;font-size:10px;font-weight:800;letter-spacing:.12em;position:relative;z-index:2}.case-art:before{content:"";position:absolute;left:15px;top:24px;width:18px;height:72px;background:#76c965;box-shadow:30px 8px 0 #55ad49,60px -1px 0 #9ed890}.case-art.trucks:before{left:15px;top:56px;width:78px;height:35px;background:#eef2ef;box-shadow:none}.case-art.trucks:after{content:"";position:absolute;left:73px;top:65px;width:34px;height:26px;background:#59b74a}.case-art.team:before{left:18px;top:34px;width:22px;height:58px;border-radius:13px;background:#66c155;box-shadow:32px 10px 0 #78cb68,64px 2px 0 #5bb84f}.case-copy{padding:15px}.case-copy small{font-size:9px;color:#909790}.case-copy h3{font-size:15px;margin:5px 0 6px}.case-copy p{font-size:11px;line-height:1.45;color:#757d76;margin:0 0 11px}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;border-top:1px solid #edf0ed;padding-top:9px}.metrics span{font-size:9px;color:#7c847d}.metrics b{display:block;font-size:14px;color:var(--gd)}
+.conversion{padding:28px 0 58px}.conv-grid{display:grid;grid-template-columns:345px 1fr;gap:16px}.nope{background:#fff4f4;border:1px solid #f1dddd;border-radius:15px;padding:22px;display:grid;grid-template-columns:1fr 120px;min-height:345px;overflow:hidden}.nope .ey{font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#c84e4e;margin:0 0 4px}.nope h2{text-align:left;font-size:24px;margin:0 0 16px}.nope ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}.nope li{font-size:12px;padding-left:22px;position:relative}.nope li:before{content:"×";position:absolute;left:0;width:16px;height:16px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-size:11px;font-weight:900}.sofa{position:relative;align-self:end;height:130px}.sofa:before{content:"";position:absolute;left:5px;bottom:38px;width:94px;height:50px;background:#f1e7e7;border-radius:14px}.sofa:after{content:"";position:absolute;left:0;bottom:22px;width:104px;height:34px;background:#eadede;border-radius:10px}.cross{position:absolute;right:0;bottom:0;width:54px;height:54px;border-radius:50%;background:#ef5a5a;color:#fff;display:grid;place-items:center;font-size:38px;z-index:3;box-shadow:0 10px 22px rgba(220,80,80,.2)}.leadbox{border:1px solid var(--line);border-radius:15px;padding:22px}.leadhead{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:16px}.leadhead h2{text-align:left;font-size:27px;margin:0}.leadhead p{max-width:410px;font-size:11px;color:#747c75;margin:0}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.formgrid label{display:flex;flex-direction:column;gap:5px}.formgrid label>span{font-size:10px;font-weight:700;color:#596159}.formgrid .wide{grid-column:1/-1}.formgrid input,.formgrid select,.formgrid textarea{width:100%;border:1px solid #dfe4df;border-radius:7px;padding:10px 11px;font:inherit;font-size:12px;outline:none}.formgrid input:focus,.formgrid select:focus,.formgrid textarea:focus{border-color:#82ca7a;box-shadow:0 0 0 3px rgba(50,181,45,.08)}.invalid{border-color:#e06666!important}.formfoot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px}.agree{display:flex;align-items:center;gap:7px;font-size:10px;color:#747c75}.agree input{accent-color:var(--g)}.status{font-size:11px;margin-top:8px;min-height:18px}.status.ok{color:#288f24}.status.bad{color:#c54d4d}.footer{border-top:1px solid var(--line);background:#fbfcfb;padding:30px 0 36px}.foot{display:grid;grid-template-columns:1.3fr .8fr .8fr 1fr;gap:38px}.foot p,.foot a,.foot span,.foot small{font-size:10px;color:#707871}.foot h4{font-size:11px;margin:2px 0 9px}.foot a,.foot span{display:block;margin:6px 0}
+@media(max-width:1080px){.menu{display:none}.burger{display:flex;margin-left:auto;width:38px;height:38px;border:0;background:#f4f7f4;border-radius:8px;flex-direction:column;align-items:center;justify-content:center;gap:4px}.burger span{width:17px;height:2px;background:#303730}.mobile{position:absolute;top:70px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:15px 24px 20px;display:none;gap:11px}.mobile.open{display:grid}.fit-grid{grid-template-columns:repeat(3,1fr)}.service-grid{grid-template-columns:repeat(2,1fr)}.adv-grid{grid-template-columns:repeat(3,1fr)}.conv-grid{grid-template-columns:1fr}.case{grid-template-columns:110px 1fr}}
+@media(max-width:780px){.container{width:min(100% - 28px,var(--w))}.nav{height:64px}.mobile{top:64px}.phone{display:none}.hero-grid{grid-template-columns:1fr;min-height:auto}.hero h1{font-size:clamp(36px,10vw,50px)}.hero-art{min-height:330px}.fit-grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr}.arrow{display:none}.case-grid{grid-template-columns:1fr}.case{grid-template-columns:135px 1fr}.leadhead{display:block}.leadhead p{margin-top:7px}.foot{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.container{width:calc(100% - 24px)}.section{padding:42px 0}.nav .btn{display:none}.hero-grid{padding:22px 0}.hero-actions{flex-direction:column}.hero-actions .btn{width:100%}.proof{display:grid;grid-template-columns:1fr 1fr}.fit-grid{gap:9px}.fit-card{min-height:138px;padding:11px 7px}.mini{transform:scale(.88)}.service-grid,.adv-grid{grid-template-columns:1fr}.case{grid-template-columns:1fr}.case-art{min-height:115px}.nope{grid-template-columns:1fr 95px;padding:18px}.sofa{transform:scale(.8);transform-origin:right bottom}.leadbox{padding:17px}.formgrid{grid-template-columns:1fr}.formgrid .wide{grid-column:auto}.formfoot{flex-direction:column;align-items:stretch}.formfoot .btn{width:100%}.foot{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-  <header class="site-header" id="top">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="GruzTime, на главную">Gruz<span>Time</span></a>
-      <nav class="desktop-nav" aria-label="Основная навигация">
-        <a href="#services">Услуги</a>
-        <a href="#warehouse-move">Складские переезды</a>
-        <a href="#outsourcing">Аутсорсинг</a>
-        <a href="#process">Как работаем</a>
-        <a href="#contacts">Контакты</a>
-      </nav>
-      <div class="header-actions">
-        <a class="phone desktop-phone" href="tel:+74952350005">+7 (495) 235-00-05</a>
-        <a class="btn btn-small btn-primary" href="#lead-form">Получить расчёт</a>
-        <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-    <nav class="mobile-nav" aria-label="Мобильная навигация">
-      <a href="#services">Услуги</a>
-      <a href="#warehouse-move">Складские переезды</a>
-      <a href="#outsourcing">Аутсорсинг</a>
-      <a href="#process">Как работаем</a>
-      <a href="#contacts">Контакты</a>
-      <a href="tel:+74952350005">+7 (495) 235-00-05</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero section-shell">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow"><span class="dot"></span> Москва и Московская область</div>
-          <h1>Погрузочно-разгрузочные работы и персонал для <span>складов, РЦ и производств</span></h1>
-          <p class="hero-lead">Комплектуем бригады грузчиков, комплектовщиков, упаковщиков и разнорабочих для разовых и постоянных B2B-проектов.</p>
-
-          <div class="hero-proof" aria-label="Условия работы">
-            <span>Договор</span>
-            <span>НДС</span>
-            <span>Отсрочка платежа</span>
-            <span>Персональный менеджер</span>
-          </div>
-
-          <div class="business-only">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 15h-2v-6h2v6Zm0-8h-2V7h2v2Z"/></svg>
-            <span><strong>Работаем с юридическими лицами и ИП.</strong> Квартирные и бытовые переезды не выполняем.</span>
-          </div>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#lead-form">Получить коммерческое предложение</a>
-            <a class="text-link" href="#services">Посмотреть услуги <span>↘</span></a>
-          </div>
-        </div>
-
-        <div class="hero-visual" aria-hidden="true">
-          <div class="visual-label">B2B operations</div>
-          <div class="warehouse-frame">
-            <div class="rack rack-left">
-              <i></i><i></i><i></i>
-              <div class="box b1"></div><div class="box b2"></div><div class="box b3"></div><div class="box b4"></div>
-            </div>
-            <div class="rack rack-right">
-              <i></i><i></i><i></i>
-              <div class="box b1"></div><div class="box b2"></div><div class="box b3"></div>
-            </div>
-            <div class="pallet">
-              <div class="pallet-box pb1"></div><div class="pallet-box pb2"></div><div class="pallet-box pb3"></div><div class="pallet-box pb4"></div><div class="pallet-box pb5"></div>
-            </div>
-            <div class="worker worker-one"><span class="head"></span><span class="body"></span><span class="leg l1"></span><span class="leg l2"></span></div>
-            <div class="worker worker-two"><span class="head"></span><span class="body"></span><span class="leg l1"></span><span class="leg l2"></span></div>
-            <div class="pallet-jack"><span class="handle"></span><span class="fork"></span><span class="wheel w1"></span><span class="wheel w2"></span></div>
-            <div class="floor-line"></div>
-          </div>
-          <div class="visual-stat stat-one"><strong>РЦ</strong><span>сменный персонал</span></div>
-          <div class="visual-stat stat-two"><strong>ПРР</strong><span>проектные работы</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="clients-strip" aria-label="Для кого работаем">
-      <div class="container strip-inner">
-        <span>Склады</span><i></i><span>Распределительные центры</span><i></i><span>Производства</span><i></i><span>Ритейл</span><i></i><span>Логистические операторы</span>
-      </div>
-    </section>
-
-    <section class="section section-scenarios">
-      <div class="container">
-        <div class="section-heading split-heading">
-          <div>
-            <div class="eyebrow">Задачи бизнеса</div>
-            <h2>Для каких задач нас привлекают</h2>
-          </div>
-          <p>Не «грузчики на пару часов», а управляемый ресурс для объекта, смены или отдельного проекта.</p>
-        </div>
-
-        <div class="scenario-grid">
-          <article class="scenario featured">
-            <div class="number">01</div>
-            <div>
-              <h3>Регулярный персонал на объект</h3>
-              <p>Подбираем и выводим линейный персонал на склад, РЦ или производство под постоянный график и понятные KPI.</p>
-            </div>
-          </article>
-          <article class="scenario">
-            <div class="number">02</div>
-            <div>
-              <h3>Пиковая нагрузка и срочное усиление</h3>
-              <p>Усиливаем действующую команду под сезон, увеличение объёмов, запуск площадки или разовый поток.</p>
-            </div>
-          </article>
-          <article class="scenario">
-            <div class="number">03</div>
-            <div>
-              <h3>Складской переезд или крупные ПРР</h3>
-              <p>Формируем бригаду под проект: планирование, погрузка, перемещение, разгрузка и контроль выполнения.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section services-section" id="services">
-      <div class="container">
-        <div class="section-heading">
-          <div class="eyebrow">Услуги GruzTime</div>
-          <h2>Четыре направления.<br>Один ответственный подрядчик.</h2>
-        </div>
-
-        <div class="services-grid">
-          <article class="service-card">
-            <div class="service-top"><span class="service-index">01</span><span class="service-arrow">↗</span></div>
-            <h3>Погрузочно-разгрузочные работы</h3>
-            <p>Разгрузка и погрузка фур, контейнеров и паллет. Бригады под объём, смену или конкретный объект.</p>
-            <div class="tags"><span>Фуры</span><span>Контейнеры</span><span>Паллеты</span></div>
-          </article>
-          <article class="service-card" id="outsourcing">
-            <div class="service-top"><span class="service-index">02</span><span class="service-arrow">↗</span></div>
-            <h3>Аутсорсинг линейного персонала</h3>
-            <p>Грузчики, комплектовщики, упаковщики и разнорабочие для регулярных смен и долгосрочных проектов.</p>
-            <div class="tags"><span>Смены</span><span>Бригадир</span><span>Контроль выхода</span></div>
-          </article>
-          <article class="service-card" id="warehouse-move">
-            <div class="service-top"><span class="service-index">03</span><span class="service-arrow">↗</span></div>
-            <h3>Складские переезды</h3>
-            <p>Организация переезда склада, РЦ или производственной площадки — от оценки до запуска на новом объекте.</p>
-            <div class="tags"><span>План работ</span><span>Бригады</span><span>Координация</span></div>
-          </article>
-          <article class="service-card">
-            <div class="service-top"><span class="service-index">04</span><span class="service-arrow">↗</span></div>
-            <h3>Такелажные работы</h3>
-            <p>Перемещение тяжёлого и негабаритного оборудования с подготовкой работ и ответственностью по договору.</p>
-            <div class="tags"><span>Негабарит</span><span>Оборудование</span><span>Проект</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="corporate-section">
-      <div class="container corporate-grid">
-        <div class="corporate-copy">
-          <div class="eyebrow eyebrow-light">Корпоративный формат</div>
-          <h2>Подходим под процессы крупного заказчика</h2>
-          <p>Не просто предоставляем людей. Встраиваемся в регламент объекта: документы, ответственность, контроль и понятная коммуникация.</p>
-          <a class="btn btn-white" href="#lead-form">Обсудить задачу</a>
-        </div>
-        <div class="corporate-list">
-          <div><span>01</span><p>Работаем с тендерами и закупками</p></div>
-          <div><span>02</span><p>Полный комплект закрывающих документов</p></div>
-          <div><span>03</span><p>Бригадир и контроль выхода персонала</p></div>
-          <div><span>04</span><p>Фото/видео подтверждение работ</p></div>
-          <div><span>05</span><p>Отсрочка платежа по договору</p></div>
-          <div><span>06</span><p>Оперативный запуск проекта</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section process-section" id="process">
-      <div class="container">
-        <div class="section-heading split-heading">
-          <div>
-            <div class="eyebrow">Процесс</div>
-            <h2>От задачи до запуска — без лишней бюрократии</h2>
-          </div>
-          <p>Сначала понимаем объект и объём. Затем считаем, фиксируем условия и выводим команду.</p>
-        </div>
-        <div class="process-line">
-          <article><span>1</span><h3>Бриф</h3><p>Фиксируем объект, сроки, объём, график и требования.</p></article>
-          <article><span>2</span><h3>Расчёт</h3><p>Готовим предложение под конкретный сценарий работ.</p></article>
-          <article><span>3</span><h3>Договор</h3><p>Согласовываем ответственность, документы и условия оплаты.</p></article>
-          <article><span>4</span><h3>Запуск</h3><p>Выводим бригаду и начинаем работу на объекте.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section case-section">
-      <div class="container">
-        <div class="section-heading split-heading">
-          <div>
-            <div class="eyebrow">Кейсы</div>
-            <h2>Показываем задачу, решение и результат</h2>
-          </div>
-          <p class="case-note">Ниже — шаблон структуры. Перед публикацией его нужно заменить на фактические данные GruzTime.</p>
-        </div>
-        <div class="case-grid">
-          <article class="case-card">
-            <div class="case-art art-one"><span>СКЛАД</span></div>
-            <div class="case-body"><span class="template-label">Пример оформления кейса</span><h3>Переезд склада</h3><p>Как показать исходную задачу, ограничения, состав бригады, ход проекта и бизнес-результат.</p><a href="#lead-form">Обсудить похожую задачу →</a></div>
-          </article>
-          <article class="case-card">
-            <div class="case-art art-two"><span>ПРР</span></div>
-            <div class="case-body"><span class="template-label">Пример оформления кейса</span><h3>Разгрузка партии фур</h3><p>Формат кейса для объёмных погрузочно-разгрузочных работ с ограничением по времени и площадке.</p><a href="#lead-form">Обсудить похожую задачу →</a></div>
-          </article>
-          <article class="case-card">
-            <div class="case-art art-three"><span>РЦ</span></div>
-            <div class="case-body"><span class="template-label">Пример оформления кейса</span><h3>Постоянная бригада на РЦ</h3><p>Формат кейса для аутсорсинга персонала: график, контроль выхода, управление и стабильность.</p><a href="#lead-form">Обсудить похожую задачу →</a></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section not-fit-section">
-      <div class="container not-fit-grid">
-        <div>
-          <div class="eyebrow">Фокус</div>
-          <h2>Не наш формат</h2>
-          <p>GruzTime сфокусирован на корпоративных объектах и проектных работах.</p>
-        </div>
-        <div class="not-fit-list">
-          <span>Квартирные переезды</span>
-          <span>Перевозка дивана / бытовой мебели</span>
-          <span>Один грузчик на час</span>
-          <span>Бытовые перевозки</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="lead-section" id="lead-form">
-      <div class="container lead-grid">
-        <div class="lead-copy">
-          <div class="eyebrow">Расчёт проекта</div>
-          <h2>Получить расчёт для объекта</h2>
-          <p>Опишите задачу в нескольких полях. Форма специально собирает B2B-контекст, чтобы менеджер сразу понимал масштаб и формат работ.</p>
-          <div class="contact-card">
-            <span>Телефон</span>
-            <a href="tel:+74952350005">+7 (495) 235-00-05</a>
-            <small>Пн–Вс, 8:30–21:00</small>
-          </div>
-        </div>
-
-        <form class="lead-form" id="quoteForm" novalidate>
-          <div class="field field-full"><label for="company">Компания *</label><input id="company" name="company" autocomplete="organization" required placeholder="ООО «Компания»" /></div>
-          <div class="field"><label for="objectType">Тип объекта *</label><select id="objectType" name="objectType" required><option value="">Выберите</option><option>Склад</option><option>Распределительный центр</option><option>Производство</option><option>Ритейл</option><option>Другое</option></select></div>
-          <div class="field"><label for="serviceType">Что требуется *</label><select id="serviceType" name="serviceType" required><option value="">Выберите</option><option>Персонал</option><option>Погрузочно-разгрузочные работы</option><option>Складской переезд</option><option>Такелаж</option></select></div>
-          <div class="field field-full"><label for="volume">Количество сотрудников / объём работ *</label><input id="volume" name="volume" required placeholder="Например: 20 человек на 2 смены или разгрузка 8 фур" /></div>
-          <div class="field field-full"><label for="address">Адрес объекта *</label><input id="address" name="address" required placeholder="Город, адрес или ориентир" /></div>
-          <div class="field"><label for="contact">Контактное лицо *</label><input id="contact" name="contact" autocomplete="name" required placeholder="Имя" /></div>
-          <div class="field"><label for="phone">Телефон *</label><input id="phone" name="phone" autocomplete="tel" inputmode="tel" required placeholder="+7 (___) ___-__-__" /></div>
-          <div class="field field-full"><label for="comment">Комментарий</label><textarea id="comment" name="comment" rows="4" placeholder="Сроки, график, требования к персоналу, особенности объекта"></textarea></div>
-          <div class="form-footer field-full">
-            <label class="consent"><input type="checkbox" id="consent" required /><span>Согласен на обработку персональных данных</span></label>
-            <button class="btn btn-primary" type="submit">Получить КП</button>
-          </div>
-          <div class="form-message field-full" id="formMessage" role="status" aria-live="polite"></div>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer" id="contacts">
-    <div class="container footer-grid">
-      <div class="footer-brand"><a class="brand" href="#top">Gruz<span>Time</span></a><p>ПРР и персонал для складов, РЦ и производств в Москве и Московской области.</p></div>
-      <div><h4>Услуги</h4><a href="#services">Погрузочно-разгрузочные работы</a><a href="#outsourcing">Аутсорсинг персонала</a><a href="#warehouse-move">Складские переезды</a><a href="#services">Такелаж</a></div>
-      <div><h4>Контакты</h4><a href="tel:+74952350005">+7 (495) 235-00-05</a><a href="mailto:Manager@gruztime.com">Manager@gruztime.com</a><span>Пн–Вс, 8:30–21:00</span></div>
-    </div>
-    <div class="container footer-bottom"><span>© 2019–2026 GruzTime</span><span>Тестовый B2B-прототип главной страницы</span></div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+<header class="header" id="top"><div class="container nav"><a class="logo" href="#top">Gruz<span>Time</span></a><nav class="menu"><a href="#services">Услуги</a><a href="#warehouse">Складские переезды</a><a href="#outsourcing">Аутсорсинг персонала</a><a href="#rigging">Такелаж</a><a href="#fit">О компании</a><a href="#contacts">Контакты</a></nav><a class="phone" href="tel:+74952350005">+7 (495) 235-00-05</a><a class="btn green" href="#lead-form">Получить расчёт</a><button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button></div><nav class="mobile"><a href="#services">Услуги</a><a href="#warehouse">Складские переезды</a><a href="#outsourcing">Аутсорсинг персонала</a><a href="#rigging">Такелаж</a><a href="#fit">О компании</a><a href="#contacts">Контакты</a></nav></header>
+<main>
+<section class="hero"><div class="container hero-grid"><div><h1>Погрузочно-разгрузочные<br>работы и персонал для<br><em>складов, РЦ и производств</em></h1><p class="lead">Комплектуем бригады грузчиков, комплектовщиков, упаковщиков и разнорабочих для разовых и постоянных проектов в Москве и Московской области.</p><div class="proof"><div><span class="ico">▣</span>Договор</div><div><span class="ico">%</span>НДС</div><div><span class="ico">◷</span>Отсрочка платежа</div><div><span class="ico">●</span>Персональный менеджер</div></div><div class="business"><span class="ico">i</span><span><b>Работаем с юридическими лицами и ИП.</b><br>Квартирные переезды не выполняем.</span></div><div class="hero-actions"><a class="btn green" href="#lead-form">Получить коммерческое предложение</a><a class="btn white" href="#services">Смотреть услуги →</a></div></div><div class="hero-art"><svg viewBox="0 0 720 520" aria-label="Склад и персонал"><defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fbfdfb"/><stop offset="1" stop-color="#eff5ef"/></linearGradient><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9de08d"/><stop offset="1" stop-color="#51b943"/></linearGradient><filter id="sh"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#254327" flood-opacity=".12"/></filter></defs><rect width="720" height="520" rx="28" fill="url(#bg)"/><ellipse cx="370" cy="470" rx="275" ry="24" fill="#dfe8df" opacity=".7"/><g opacity=".95"><rect x="70" y="80" width="21" height="300" rx="4" fill="#d3d9d3"/><rect x="270" y="80" width="21" height="300" rx="4" fill="#d3d9d3"/><rect x="65" y="112" width="235" height="12" rx="4" fill="#c2c9c2"/><rect x="65" y="207" width="235" height="12" rx="4" fill="#c2c9c2"/><rect x="65" y="302" width="235" height="12" rx="4" fill="#c2c9c2"/><g fill="url(#gg)" filter="url(#sh)"><rect x="108" y="65" width="52" height="46" rx="7"/><rect x="164" y="78" width="55" height="33" rx="7"/><rect x="223" y="69" width="48" height="42" rx="7"/><rect x="103" y="162" width="68" height="44" rx="7"/><rect x="176" y="175" width="51" height="31" rx="7"/><rect x="232" y="154" width="49" height="52" rx="7"/><rect x="107" y="257" width="50" height="44" rx="7"/><rect x="162" y="243" width="76" height="58" rx="7"/><rect x="243" y="261" width="39" height="40" rx="7"/></g></g><g opacity=".9"><rect x="565" y="92" width="20" height="248" rx="4" fill="#d3d9d3"/><rect x="686" y="92" width="20" height="248" rx="4" fill="#d3d9d3"/><rect x="560" y="120" width="151" height="12" rx="4" fill="#c2c9c2"/><rect x="560" y="205" width="151" height="12" rx="4" fill="#c2c9c2"/><rect x="560" y="290" width="151" height="12" rx="4" fill="#c2c9c2"/><g fill="url(#gg)"><rect x="592" y="77" width="43" height="42" rx="7"/><rect x="640" y="84" width="43" height="35" rx="7"/><rect x="586" y="165" width="52" height="39" rx="7"/><rect x="645" y="155" width="42" height="49" rx="7"/><rect x="592" y="247" width="40" height="42" rx="7"/><rect x="639" y="237" width="48" height="52" rx="7"/></g></g><g filter="url(#sh)"><rect x="278" y="385" width="198" height="16" rx="4" fill="#c89457"/><rect x="294" y="400" width="18" height="14" rx="3" fill="#aa7942"/><rect x="438" y="400" width="18" height="14" rx="3" fill="#aa7942"/><g fill="url(#gg)"><rect x="286" y="319" width="62" height="64" rx="8"/><rect x="352" y="318" width="63" height="65" rx="8"/><rect x="419" y="333" width="51" height="50" rx="8"/><rect x="309" y="270" width="61" height="46" rx="8"/><rect x="374" y="263" width="67" height="53" rx="8"/></g></g><g transform="translate(170 210)" filter="url(#sh)"><circle r="20" fill="#f3f4f1"/><path d="M-21 -5Q0-32 22-4" fill="#70ca5d"/><rect x="-24" y="22" width="48" height="78" rx="20" fill="#f2f4ef"/><path d="M-21 31H21L16 78H-16Z" fill="#69c656"/><path d="M-9 98L-18 156" stroke="#e4e9e3" stroke-width="18" stroke-linecap="round"/><path d="M9 98L20 156" stroke="#e4e9e3" stroke-width="18" stroke-linecap="round"/><path d="M-19 49L-52 90" stroke="#eef1ec" stroke-width="15" stroke-linecap="round"/></g><g transform="translate(520 250) scale(.82)" filter="url(#sh)"><circle r="20" fill="#f3f4f1"/><path d="M-21 -5Q0-32 22-4" fill="#70ca5d"/><rect x="-24" y="22" width="48" height="78" rx="20" fill="#f2f4ef"/><path d="M-21 31H21L16 78H-16Z" fill="#69c656"/><path d="M-9 98L-18 156" stroke="#e4e9e3" stroke-width="18" stroke-linecap="round"/><path d="M9 98L20 156" stroke="#e4e9e3" stroke-width="18" stroke-linecap="round"/></g><g transform="translate(615 303) scale(.68)" filter="url(#sh)"><circle r="20" fill="#f3f4f1"/><path d="M-21 -5Q0-32 22-4" fill="#70ca5d"/><rect x="-24" y="22" width="48" height="78" rx="20" fill="#f2f4ef"/><path d="M-21 31H21L16 78H-16Z" fill="#69c656"/><path d="M-9 98L-18 156" stroke="#e4e9e3" stroke-width="18" stroke-linecap="round"/><path d="M9 98L20 156" stroke="#e4e9e3" stroke-width="18" stroke-linecap="round"/></g><g transform="translate(213 340)" filter="url(#sh)"><rect x="0" y="39" width="104" height="36" rx="11" fill="#319e2b"/><circle cx="18" cy="80" r="13" fill="#414a42"/><circle cx="89" cy="80" r="13" fill="#414a42"/><path d="M31 37L52-17" stroke="#435443" stroke-width="11" stroke-linecap="round"/><path d="M50-19H78" stroke="#435443" stroke-width="10" stroke-linecap="round"/></g><g transform="translate(592 383)" fill="url(#gg)" filter="url(#sh)"><rect width="58" height="58" rx="8"/><rect x="65" y="16" width="50" height="50" rx="8"/><rect x="16" y="65" width="69" height="52" rx="8"/></g></svg></div></div></section>
+<section class="section fit" id="fit"><div class="container"><h2>Кому подходим</h2><div class="fit-grid"><article class="fit-card"><div class="mini wh"><span></span></div><h3>Склады</h3></article><article class="fit-card"><div class="mini dc"><span></span><i></i></div><h3>Распределительные<br>центры</h3></article><article class="fit-card"><div class="mini factory"><span></span></div><h3>Производства</h3></article><article class="fit-card"><div class="mini retail"><span></span></div><h3>Ритейл</h3></article><article class="fit-card"><div class="mini truck"><span></span></div><h3>Логистические<br>операторы</h3></article></div></div></section>
+<section class="section services" id="services"><div class="container"><h2>Наши услуги</h2><div class="service-grid"><article class="service"><div class="sico">⇄</div><h3>Погрузочно-разгрузочные работы</h3><p>Разгрузка и погрузка фур, контейнеров, вагонов, работа с паллетами и негабаритом.</p><a href="#lead-form">→</a></article><article class="service" id="outsourcing"><div class="sico">♟</div><h3>Аутсорсинг линейного персонала</h3><p>Грузчики, комплектовщики, упаковщики и разнорабочие на смену или долгосрочно.</p><a href="#lead-form">→</a></article><article class="service" id="warehouse"><div class="sico">⌂</div><h3>Складские переезды</h3><p>Переезд складов, РЦ и производств под ключ: упаковка, разборка, перевозка, расстановка.</p><a href="#lead-form">→</a></article><article class="service" id="rigging"><div class="sico">⚙</div><h3>Такелажные работы</h3><p>Перемещение и монтаж технологического оборудования и тяжёлых грузов.</p><a href="#lead-form">→</a></article></div></div></section>
+<section class="section advantages"><div class="container"><h2>Почему GruzTime</h2><div class="adv-grid"><article class="adv"><div class="aico">✓</div><h3>Контроль выхода персонала</h3><p>Отчётность по явке и выполнению смен.</p></article><article class="adv"><div class="aico">●</div><h3>Бригадиры на объекте</h3><p>Старшие смены и ответственный координатор.</p></article><article class="adv"><div class="aico">⌘</div><h3>Работаем с тендерами</h3><p>Участвуем в закупках и корпоративных процедурах.</p></article><article class="adv"><div class="aico">▤</div><h3>Полный комплект документов</h3><p>Закрывающие документы в согласованный срок.</p></article><article class="adv"><div class="aico">▶</div><h3>Фото/видео контроль</h3><p>Подтверждаем объёмы и качество работ.</p></article><article class="adv"><div class="aico">✣</div><h3>Оперативный запуск проекта</h3><p>Формируем бригаду под согласованные сроки.</p></article></div></div></section>
+<section class="section process"><div class="container"><h2>Как начинается работа</h2><div class="steps"><article class="step"><div class="num">1</div><div><h3>Бриф</h3><p>Собираем информацию об объекте и задачах.</p></div></article><span class="arrow">→</span><article class="step"><div class="num">2</div><div><h3>Расчёт</h3><p>Готовим коммерческое предложение.</p></div></article><span class="arrow">→</span><article class="step"><div class="num">3</div><div><h3>Договор</h3><p>Согласовываем условия и подписываем договор.</p></div></article><span class="arrow">→</span><article class="step"><div class="num">4</div><div><h3>Запуск работ</h3><p>Выводим бригаду и начинаем работы.</p></div></article></div></div></section>
+<section class="section cases"><div class="container"><h2>Кейсы</h2><p class="case-note">Шаблон оформления — фактические данные GruzTime добавим после проверки.</p><div class="case-grid"><article class="case"><div class="case-art"><span>СКЛАД</span></div><div class="case-copy"><small>Пример оформления</small><h3>Переезд склада</h3><p>Задача, ограничения, состав бригады, ход проекта и итог для заказчика.</p><div class="metrics"><span><b>—</b>площадь</span><span><b>—</b>срок</span><span><b>—</b>бригада</span></div></div></article><article class="case"><div class="case-art trucks"><span>ПРР</span></div><div class="case-copy"><small>Пример оформления</small><h3>Разгрузка партии фур</h3><p>Объём, график, количество смен и особенности объекта.</p><div class="metrics"><span><b>—</b>объём</span><span><b>—</b>смены</span><span><b>—</b>бригада</span></div></div></article><article class="case"><div class="case-art team"><span>РЦ</span></div><div class="case-copy"><small>Пример оформления</small><h3>Постоянная бригада на РЦ</h3><p>Формат регулярной работы, контроль выхода и стабильность смен.</p><div class="metrics"><span><b>—</b>состав</span><span><b>—</b>период</span><span><b>—</b>KPI</span></div></div></article></div></div></section>
+<section class="conversion"><div class="container conv-grid"><aside class="nope"><div><p class="ey">Фокус GruzTime</p><h2>Чем мы не занимаемся</h2><ul><li>Квартирные переезды</li><li>Перевозка диванов и бытовой мебели</li><li>Один грузчик на час</li><li>Бытовые перевозки</li></ul></div><div class="sofa"><div class="cross">×</div></div></aside><div class="leadbox" id="lead-form"><div class="leadhead"><div><h2>Получить расчёт для объекта</h2></div><p>Заполните короткий бриф — менеджер свяжется для уточнения задачи.</p></div><form id="quote"><div class="formgrid"><label><span>Компания *</span><input name="company" required placeholder="ООО «Компания»"></label><label><span>Тип объекта *</span><select name="object" required><option value="">Выберите</option><option>Склад</option><option>Распределительный центр</option><option>Производство</option><option>Ритейл</option><option>Другое</option></select></label><label><span>Что требуется *</span><select name="service" required><option value="">Выберите</option><option>Персонал</option><option>Погрузочно-разгрузочные работы</option><option>Складской переезд</option><option>Такелаж</option></select></label><label><span>Количество сотрудников / объём работ</span><input placeholder="Например: 20 человек / 6 фур"></label><label class="wide"><span>Адрес объекта</span><input placeholder="Москва или Московская область"></label><label><span>Контактное лицо *</span><input required placeholder="Имя"></label><label><span>Телефон *</span><input required placeholder="+7 (___) ___-__-__"></label><label class="wide"><span>Комментарий</span><textarea rows="3" placeholder="Кратко опишите задачу"></textarea></label></div><div class="formfoot"><label class="agree"><input type="checkbox" required> Согласен с обработкой персональных данных</label><button class="btn green" type="submit">Получить КП</button></div><div class="status"></div></form></div></div></section>
+</main>
+<footer class="footer" id="contacts"><div class="container foot"><div><a class="logo" href="#top">Gruz<span>Time</span></a><p>Погрузочно-разгрузочные работы и персонал для складов, РЦ и производств.</p><small>© 2019–2026 GruzTime</small></div><div><h4>Услуги</h4><a href="#services">ПРР</a><a href="#outsourcing">Аутсорсинг</a><a href="#warehouse">Складские переезды</a><a href="#rigging">Такелаж</a></div><div><h4>Компания</h4><a href="#fit">О компании</a><a href="#lead-form">Получить расчёт</a></div><div><h4>Контакты</h4><a href="tel:+74952350005">+7 (495) 235-00-05</a><a href="mailto:Manager@gruztime.com">Manager@gruztime.com</a><span>Пн–Вс, 8:30–21:00</span><span>Москва и МО</span></div></div></footer>
+<script>const b=document.querySelector('.burger'),m=document.querySelector('.mobile');if(b&&m){b.onclick=()=>{const o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)};m.querySelectorAll('a').forEach(a=>a.onclick=()=>m.classList.remove('open'))}const f=document.getElementById('quote');if(f){f.onsubmit=e=>{e.preventDefault();let ok=true;const s=f.querySelector('.status');f.querySelectorAll('[required]').forEach(x=>{const v=x.type==='checkbox'?x.checked:x.value.trim();if(x.type!=='checkbox')x.classList.toggle('invalid',!v);if(!v)ok=false});s.className='status '+(ok?'ok':'bad');s.textContent=ok?'Тестовая форма заполнена корректно. Отправку в CRM подключим отдельно.':'Заполните обязательные поля и подтвердите согласие.';if(ok)f.reset()}}</script>
+</body></html>
