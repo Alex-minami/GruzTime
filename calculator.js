@@ -1,141 +1,48 @@
-// GruzTime calculator v1 — generated from the provided 2026 price list.
 (() => {
-  const panel = document.querySelector('.lead-panel#lead-form');
-  if (!panel || panel.dataset.calculatorReady === '1') return;
-  panel.dataset.calculatorReady = '1';
+  const panel = document.querySelector('#lead-form');
+  if (!panel || panel.dataset.calcReady === '1') return;
+  panel.dataset.calcReady = '1';
 
-  const style = document.createElement('style');
-  style.textContent = `
-  .calculator-panel{padding:24px}.calculator-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.calculator-grid label{display:flex;flex-direction:column;gap:5px}.calculator-grid label>span{font-size:10px;font-weight:750;color:#596159;text-transform:uppercase;letter-spacing:.04em}.calculator-grid input,.calculator-grid select{height:44px;width:100%;border:1px solid #dfe4df;border-radius:8px;background:#fff;padding:0 11px;font:inherit;font-size:12px;outline:none}.calculator-grid input:focus,.calculator-grid select:focus{border-color:#82ca7a;box-shadow:0 0 0 3px rgba(49,181,44,.08)}.calculator-grid small{font-size:9px;color:#858d86;margin-top:-1px}.calc-button{width:100%;margin-top:14px}.calc-disclaimer{font-size:9px;color:#858d86;margin:8px 0 0}.calc-hidden{display:none!important}.calc-result{margin-top:18px;border-top:1px solid var(--line);padding-top:17px}.result-breakdown{display:grid;gap:7px}.result-breakdown>div{display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:12px;color:#626b63}.result-breakdown b{font-size:14px;color:#202620}.result-breakdown .result-total{margin-top:4px;padding-top:11px;border-top:1px solid var(--line);color:#222}.result-breakdown .result-total span{font-weight:750}.result-breakdown .result-total b{font-size:24px;color:var(--green-dark);letter-spacing:-.4px}.calc-details{font-size:10px;color:#858d86;line-height:1.45;margin:7px 0 14px}.offer-box{display:grid;grid-template-columns:1fr 210px;gap:18px;padding:18px;border-radius:13px;background:linear-gradient(135deg,#f0faed,#e7f7e3);border:1px solid #d4ebcf}.offer-kicker{display:block;font-size:9px;font-weight:850;text-transform:uppercase;letter-spacing:.1em;color:var(--green-dark);margin-bottom:5px}.offer-copy h3{font-size:16px;line-height:1.35;margin:0 0 12px;letter-spacing:-.2px}.offer-numbers{display:flex;gap:26px}.offer-numbers div{display:flex;flex-direction:column}.offer-numbers span{font-size:9px;color:#738073}.offer-numbers b{font-size:16px}.offer-numbers .discount-price b{font-size:22px;color:var(--green-dark)}.offer-action{border-left:1px solid #cfe4ca;padding-left:18px;display:flex;flex-direction:column;justify-content:center}.timer-label{font-size:9px;color:#738073}.timer{font-size:32px;line-height:1;font-weight:850;letter-spacing:-1px;color:#1e2c20;margin:4px 0 10px;font-variant-numeric:tabular-nums}.order-button{width:100%;font-size:12px;padding:0 12px}.offer-box.expired{background:#f7f8f7;border-color:#e4e7e4}.offer-box.expired .offer-kicker,.offer-box.expired .discount-price b{color:#6e776f}.offer-box.expired .timer{color:#7f8780}.order-form-wrap{margin-top:14px;border:1px solid var(--line);border-radius:12px;padding:16px}.order-intro{display:flex;justify-content:space-between;gap:22px;align-items:end;margin-bottom:12px}.order-intro h3{font-size:17px;margin:0}.order-intro p{font-size:10px;color:#7a837b;margin:0;max-width:360px}.compact-order{grid-template-columns:repeat(2,1fr)}.order-summary{font-size:10px;line-height:1.5;color:#687169;background:#f7f9f7;border-radius:8px;padding:9px 10px;margin-top:9px}.calc-invalid{border-color:#dc6a6a!important}.calc-form-status{font-size:11px;margin-top:8px;min-height:18px}.calc-form-status.success{color:#238f20}.calc-form-status.error{color:#c54848}
-  @media(max-width:900px){.offer-box{grid-template-columns:1fr}.offer-action{border-left:0;border-top:1px solid #cfe4ca;padding:13px 0 0;align-items:flex-start}.order-button{width:auto}.offer-numbers{flex-wrap:wrap}}
-  @media(max-width:620px){.calculator-panel{padding:18px}.calculator-grid{grid-template-columns:1fr}.offer-numbers{gap:16px}.order-intro{display:block}.order-intro p{margin-top:5px}.compact-order{grid-template-columns:1fr}.calculator-panel .form-footer{flex-direction:column;align-items:stretch}.calculator-panel .form-footer .btn{width:100%}}
+  const css = document.createElement('style');
+  css.textContent = `
+  #lead-form.gc{border:1px solid #e1e7e1;border-radius:16px;padding:24px;background:#fff}
+  .gc-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:18px}.gc-head h2{margin:0;font-size:28px;letter-spacing:-.8px}.gc-head p{margin:0;max-width:390px;font-size:11px;color:#737c74}.gc-kicker{display:block;margin-bottom:5px;font-size:10px;font-weight:850;letter-spacing:.1em;text-transform:uppercase;color:#238f20}
+  .gc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.gc-field{display:flex;flex-direction:column;gap:5px}.gc-field span{font-size:10px;font-weight:750;color:#596159}.gc-field small{font-size:9px;color:#899088}.gc-field input,.gc-field select{height:44px;border:1px solid #dfe4df;border-radius:8px;padding:0 11px;background:#fff;font:inherit;font-size:12px;outline:none}.gc-field input:focus,.gc-field select:focus{border-color:#7acb72;box-shadow:0 0 0 3px rgba(50,181,45,.08)}.gc-hide{display:none!important}
+  .gc-calc{width:100%;height:48px;border:0;border-radius:8px;background:#31b52c;color:#fff;font-weight:800;margin-top:14px;cursor:pointer}.gc-calc:hover{background:#238f20}.gc-note{font-size:9px;color:#878f88;margin:8px 0 0}
+  .gc-result{margin-top:18px;padding-top:17px;border-top:1px solid #e4e9e4}.gc-line{display:flex;justify-content:space-between;gap:18px;font-size:12px;color:#626b63;padding:4px 0}.gc-line b{font-size:14px;color:#202620}.gc-total{margin-top:4px;padding-top:12px;border-top:1px solid #e4e9e4}.gc-total span{font-weight:800}.gc-total b{font-size:25px;color:#238f20}.gc-details{font-size:10px;line-height:1.5;color:#7e867f;margin:7px 0 14px}
+  .gc-offer{display:grid;grid-template-columns:1fr 220px;gap:18px;padding:18px;border:1px solid #cfe6ca;border-radius:13px;background:linear-gradient(135deg,#f0faed,#e5f7e1)}.gc-offer.expired{background:#f6f7f6;border-color:#e1e5e1}.gc-offer h3{font-size:16px;line-height:1.35;margin:0 0 12px}.gc-offer-k{font-size:9px;font-weight:850;letter-spacing:.1em;text-transform:uppercase;color:#238f20}.gc-prices{display:flex;gap:28px}.gc-prices span{display:block;font-size:9px;color:#728073}.gc-prices b{font-size:17px}.gc-prices .gc-discount b{font-size:23px;color:#238f20}.gc-action{border-left:1px solid #cae0c6;padding-left:18px;display:flex;flex-direction:column;justify-content:center}.gc-timer-label{font-size:9px;color:#728073}.gc-timer{font-size:32px;line-height:1;font-weight:900;margin:4px 0 10px;font-variant-numeric:tabular-nums}.gc-order{height:46px;border:0;border-radius:8px;background:#31b52c;color:white;font-weight:800;cursor:pointer}.gc-order:hover{background:#238f20}.gc-offer.expired .gc-order{background:#667067}.gc-offer.expired .gc-offer-k,.gc-offer.expired .gc-discount b{color:#667067}
+  .gc-form{margin-top:14px;padding:16px;border:1px solid #e1e7e1;border-radius:12px}.gc-form h3{font-size:17px;margin:0 0 4px}.gc-form>p{font-size:10px;color:#788179;margin:0 0 12px}.gc-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.gc-form-grid input{height:42px;border:1px solid #dfe4df;border-radius:8px;padding:0 10px;font:inherit;font-size:12px}.gc-summary{font-size:10px;line-height:1.5;color:#657067;background:#f6f8f6;border-radius:8px;padding:9px 10px;margin-top:9px}.gc-form-foot{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:10px}.gc-consent{display:flex;gap:7px;align-items:center;font-size:10px;color:#737c74}.gc-submit{height:44px;border:0;border-radius:8px;background:#31b52c;color:#fff;padding:0 18px;font-weight:800}.gc-status{font-size:11px;min-height:18px;margin-top:7px}.gc-status.bad{color:#c54848}.gc-status.ok{color:#238f20}.gc-invalid{border-color:#d96565!important}
+  @media(max-width:780px){.gc-head{display:block}.gc-head p{margin-top:6px}.gc-grid,.gc-form-grid{grid-template-columns:1fr}.gc-offer{grid-template-columns:1fr}.gc-action{border-left:0;border-top:1px solid #cae0c6;padding:13px 0 0}.gc-form-foot{align-items:stretch;flex-direction:column}.gc-submit{width:100%}}
   `;
-  document.head.appendChild(style);
-
-  panel.classList.add('calculator-panel');
+  document.head.appendChild(css);
+  panel.className = (panel.className + ' gc').trim();
   panel.innerHTML = `
-    <div class="lead-head">
-      <div><p class="eyebrow-green">Калькулятор по прайсу</p><h2>Рассчитать стоимость</h2></div>
-      <p>Ориентировочный расчёт по действующему прайсу GruzTime. Минимальная оплата работ — 4 часа.</p>
+    <div class="gc-head"><div><span class="gc-kicker">Калькулятор по прайсу 2026</span><h2>Рассчитать стоимость работ</h2></div><p>Расчёт предварительный. Минимальная оплата персонала — 4 часа. Итог подтверждает менеджер.</p></div>
+    <div class="gc-grid">
+      <label class="gc-field"><span>Вид работ</span><select id="gc-service"><option value="unload">Погрузка / разгрузка фур и контейнеров</option><option value="warehouse_move">Складской переезд</option><option value="warehouse_light">Грузчики на склад — лёгкие работы</option><option value="furniture">Разборка / сборка мебели</option><option value="materials">Разгрузка и перенос стройматериалов</option><option value="rigging">Такелажные работы</option><option value="waste">Сбор, упаковка и вынос строительного мусора</option></select></label>
+      <label class="gc-field"><span>Форма расчёта</span><select id="gc-tax"><option value="cash">Наличный расчёт</option><option value="vat5">С НДС 5%</option><option value="vat22">С НДС 22%</option></select></label>
+      <label class="gc-field"><span>Количество сотрудников</span><input id="gc-people" type="number" min="1" max="200" value="4"></label>
+      <label class="gc-field"><span>Продолжительность работ, часов</span><input id="gc-hours" type="number" min="1" max="48" value="4"></label>
+      <label class="gc-field"><span>Расстояние за МКАД, км</span><input id="gc-km" type="number" min="0" max="500" value="0"><small>До 50 км: +1 час к времени персонала; от 51 км: +2 часа.</small></label>
+      <label class="gc-field"><span>Автотранспорт</span><select id="gc-vehicle"><option value="none">Без автомобиля</option><option value="porter">Porter 1 т</option><option value="gazelle">Газель 1,5 т</option><option value="truck5">Авто 5 т</option></select></label>
+      <label class="gc-field gc-vh gc-hide"><span>Автомобиль, часов</span><input id="gc-vhours" type="number" min="1" max="48" value="4"></label>
     </div>
-    <div class="calculator-grid">
-      <label><span>Вид работ</span><select id="calc-service">
-        <option value="unload">Погрузка / разгрузка фур и контейнеров</option>
-        <option value="warehouse_move">Складской переезд</option>
-        <option value="warehouse_light">Грузчики на склад — лёгкие работы</option>
-        <option value="furniture">Разборка / сборка мебели</option>
-        <option value="materials">Разгрузка и перенос стройматериалов</option>
-        <option value="rigging">Такелажные работы</option>
-        <option value="waste">Сбор, упаковка и вынос строительного мусора</option>
-      </select></label>
-      <label><span>Форма расчёта</span><select id="calc-tax">
-        <option value="cash">Наличный расчёт</option><option value="vat5">С НДС 5%</option><option value="vat22">С НДС 22%</option>
-      </select></label>
-      <label><span>Количество сотрудников</span><input id="calc-people" type="number" min="1" max="200" value="4"></label>
-      <label><span>Продолжительность работ, часов</span><input id="calc-hours" type="number" min="1" max="48" step="1" value="4"></label>
-      <label><span>Расстояние за МКАД, км</span><input id="calc-km" type="number" min="0" max="500" step="1" value="0"><small>0 — объект в Москве / до МКАД</small></label>
-      <label><span>Автотранспорт</span><select id="calc-vehicle"><option value="none">Без автомобиля</option><option value="porter">Porter 1 т</option><option value="gazelle">Газель 1,5 т</option><option value="truck5">Авто 5 т</option></select></label>
-      <label class="vehicle-hours calc-hidden"><span>Автомобиль, часов</span><input id="calc-vehicle-hours" type="number" min="1" max="48" step="1" value="4"></label>
-    </div>
-    <button class="btn btn-primary calc-button" id="calculate-btn" type="button">Рассчитать стоимость</button>
-    <p class="calc-disclaimer">Расчёт предварительный. Финальная стоимость зависит от фактического объёма, условий объекта и подтверждается менеджером.</p>
-    <div class="calc-result calc-hidden" id="calc-result" aria-live="polite">
-      <div class="result-breakdown">
-        <div><span>Работы</span><b id="result-labor">—</b></div>
-        <div id="vehicle-row" class="calc-hidden"><span>Автотранспорт</span><b id="result-vehicle">—</b></div>
-        <div class="result-total"><span>Расчётная стоимость</span><b id="result-total">—</b></div>
-      </div>
-      <div class="calc-details" id="result-details"></div>
-      <div class="offer-box" id="discount-offer">
-        <div class="offer-copy">
-          <span class="offer-kicker">Скидка за быстрое решение</span>
-          <h3>Если нажать «Заказать» в течение 5 минут — зафиксируем скидку 5% от суммы расчёта. По рукам?</h3>
-          <div class="offer-numbers"><div><span>Ваша экономия</span><b id="result-saving">—</b></div><div class="discount-price"><span>Цена со скидкой</span><b id="result-discount">—</b></div></div>
-        </div>
-        <div class="offer-action"><div class="timer-label">Скидка действует ещё</div><div class="timer" id="discount-timer">05:00</div><button class="btn btn-primary order-button" id="order-btn" type="button">Заказать со скидкой 5%</button></div>
-      </div>
-      <div class="order-form-wrap calc-hidden" id="order-form-wrap">
-        <div class="order-intro"><h3>Зафиксировать расчёт</h3><p>Оставьте контакт — менеджер получит параметры расчёта и подтвердит стоимость.</p></div>
-        <form id="calc-order-form" novalidate><input type="hidden" name="calculation" id="calculation-summary">
-          <div class="form-grid compact-order">
-            <label><span>Компания *</span><input name="company" required placeholder="ООО «Компания»"></label>
-            <label><span>Контактное лицо *</span><input name="contact" required placeholder="Имя"></label>
-            <label><span>Телефон *</span><input name="phone" required inputmode="tel" placeholder="+7 (___) ___-__-__"></label>
-            <label><span>Комментарий</span><input name="comment" placeholder="Например: нужна ночная смена"></label>
-          </div>
-          <div class="order-summary" id="order-summary"></div>
-          <div class="form-footer"><label class="agree"><input type="checkbox" required><span>Согласен с обработкой персональных данных</span></label><button class="btn btn-primary" type="submit">Отправить заявку</button></div>
-          <div class="calc-form-status" aria-live="polite"></div>
-        </form>
-      </div>
+    <button class="gc-calc" id="gc-calc" type="button">Рассчитать стоимость</button><p class="gc-note">Ставки и минимальные оплаты взяты из предоставленного прайс-листа GruzTime.</p>
+    <div class="gc-result gc-hide" id="gc-result"><div class="gc-line"><span>Работы</span><b id="gc-labor">—</b></div><div class="gc-line gc-hide" id="gc-vrow"><span>Автотранспорт</span><b id="gc-vcost">—</b></div><div class="gc-line gc-total"><span>Расчётная стоимость</span><b id="gc-total">—</b></div><div class="gc-details" id="gc-details"></div>
+      <div class="gc-offer" id="gc-offer"><div><span class="gc-offer-k">Скидка за быстрое решение</span><h3>Если нажать «Заказать» в течение 5 минут — зафиксируем скидку 5% от суммы расчёта. По рукам?</h3><div class="gc-prices"><div><span>Экономия</span><b id="gc-saving">—</b></div><div class="gc-discount"><span>К оплате со скидкой</span><b id="gc-discount">—</b></div></div></div><div class="gc-action"><span class="gc-timer-label">Скидка действует ещё</span><div class="gc-timer" id="gc-timer">05:00</div><button class="gc-order" id="gc-order" type="button">Заказать со скидкой 5%</button></div></div>
+      <div class="gc-form gc-hide" id="gc-form"><h3>Зафиксировать расчёт</h3><p>Оставьте контакт — параметры расчёта сохранятся в заявке.</p><div class="gc-form-grid"><input name="company" placeholder="Компания *"><input name="contact" placeholder="Контактное лицо *"><input name="phone" inputmode="tel" placeholder="Телефон *"><input name="comment" placeholder="Комментарий"></div><div class="gc-summary" id="gc-summary"></div><div class="gc-form-foot"><label class="gc-consent"><input id="gc-consent" type="checkbox"> Согласен с обработкой персональных данных</label><button class="gc-submit" id="gc-submit" type="button">Отправить заявку</button></div><div class="gc-status" id="gc-status"></div></div>
     </div>`;
 
-  const serviceRates = {
-    unload:{label:'Погрузка / разгрузка фур и контейнеров',cash:720,vat5:813.6,vat22:921.6},
-    warehouse_move:{label:'Складской переезд',cash:720,vat5:813.6,vat22:921.6},
-    warehouse_light:{label:'Грузчики на склад — лёгкие работы',cash:720,vat5:813.6,vat22:921.6},
-    furniture:{label:'Разборка / сборка мебели',cash:850,vat5:960.5,vat22:1088},
-    materials:{label:'Разгрузка и перенос стройматериалов',cash:850,vat5:960.5,vat22:1088},
-    rigging:{label:'Такелажные работы',cash:950,vat5:1073.5,vat22:1216},
-    waste:{label:'Сбор, упаковка и вынос строительного мусора',cash:950,vat5:1073.5,vat22:1216}
+  const rates={
+    unload:{l:'Погрузка / разгрузка',cash:720,vat5:813.6,vat22:921.6},warehouse_move:{l:'Складской переезд',cash:720,vat5:813.6,vat22:921.6},warehouse_light:{l:'Лёгкие складские работы',cash:720,vat5:813.6,vat22:921.6},
+    furniture:{l:'Разборка / сборка мебели',cash:850,vat5:960.5,vat22:1088},materials:{l:'Стройматериалы',cash:850,vat5:960.5,vat22:1088},rigging:{l:'Такелажные работы',cash:950,vat5:1073.5,vat22:1216},waste:{l:'Строительный мусор',cash:950,vat5:1073.5,vat22:1216}
   };
-  const vehicles = {
-    none:{label:'Без автомобиля'},
-    porter:{label:'Porter 1 т',cash:{rate:1400,min:5600},vat5:{rate:1582,min:7910},vat22:{rate:1792,min:8960},km:30},
-    gazelle:{label:'Газель 1,5 т',cash:{rate:1900,min:7600},vat5:{rate:2147,min:10735},vat22:{rate:2432,min:12160},km:40},
-    truck5:{label:'Авто 5 т',cash:{rate:2400,min:9600},vat5:{rate:2712,min:13560},vat22:{rate:3072,min:21504},km:50}
-  };
-  const taxLabels={cash:'наличный расчёт',vat5:'НДС 5%',vat22:'НДС 22%'};
-  const q=s=>panel.querySelector(s);
-  const money=n=>new Intl.NumberFormat('ru-RU',{maximumFractionDigits:0}).format(Math.round(n))+' ₽';
-  const vehicleSelect=q('#calc-vehicle'), vehicleHours=q('.vehicle-hours');
-  vehicleSelect.addEventListener('change',()=>vehicleHours.classList.toggle('calc-hidden',vehicleSelect.value==='none'));
-
-  let current=null, ticker=null;
-  const timerKey='gruztime_discount_deadline';
-  const getDeadline=()=>{const saved=Number(sessionStorage.getItem(timerKey)||0);if(saved)return saved;const d=Date.now()+300000;sessionStorage.setItem(timerKey,String(d));return d;};
-
-  function updateOffer(){
-    if(!current)return;
-    const deadline=Number(sessionStorage.getItem(timerKey)||0), left=Math.max(0,deadline-Date.now());
-    const min=Math.floor(left/60000), sec=Math.floor((left%60000)/1000);
-    q('#discount-timer').textContent=String(min).padStart(2,'0')+':'+String(sec).padStart(2,'0');
-    const active=left>0; current.discountActive=active; q('#discount-offer').classList.toggle('expired',!active);
-    if(active){q('#result-saving').textContent=money(current.total*.05);q('#result-discount').textContent=money(current.total*.95);q('#order-btn').textContent='Заказать со скидкой 5%';}
-    else{q('#result-saving').textContent='Срок акции истёк';q('#result-discount').textContent=money(current.total);q('#order-btn').textContent='Заказать по расчёту';}
-  }
-
-  function calculate(){
-    const service=serviceRates[q('#calc-service').value], tax=q('#calc-tax').value;
-    const people=Math.max(1,Number(q('#calc-people').value)||1), hours=Math.max(1,Number(q('#calc-hours').value)||1), km=Math.max(0,Number(q('#calc-km').value)||0);
-    const travelHours=km===0?0:(km<=50?1:2), billableHours=Math.max(4,hours+travelHours), laborRate=service[tax], labor=laborRate*people*billableHours;
-    const vehicleKey=vehicleSelect.value; let vehicleCost=0, vehicleText='', vehicleBillHours=0;
-    if(vehicleKey!=='none'){
-      const v=vehicles[vehicleKey], vp=v[tax]; vehicleBillHours=Math.max(1,Number(q('#calc-vehicle-hours').value)||1);
-      const timeCost=Math.max(vehicleBillHours*vp.rate,vp.min), distanceCost=km*v.km; vehicleCost=timeCost+distanceCost;
-      vehicleText=v.label+': '+money(timeCost)+(km?' + '+km+' км × '+v.km+' ₽ = '+money(distanceCost):'');
-    }
-    const total=labor+vehicleCost;
-    current={service,tax,people,hours,km,travelHours,billableHours,laborRate,labor,vehicleKey,vehicleCost,vehicleText,total,discountActive:true};
-    getDeadline();
-    q('#result-labor').textContent=money(labor);q('#result-total').textContent=money(total);q('#vehicle-row').classList.toggle('calc-hidden',vehicleKey==='none');if(vehicleKey!=='none')q('#result-vehicle').textContent=money(vehicleCost);
-    let details=people+' чел. × '+billableHours+' оплачиваемых ч × '+laborRate.toLocaleString('ru-RU')+' ₽/ч ('+taxLabels[tax]+').';
-    if(travelHours)details+=' Выезд за МКАД: +'+travelHours+' ч к общему времени персонала.'; if(vehicleText)details+=' '+vehicleText+'.';
-    q('#result-details').textContent=details;q('#calc-result').classList.remove('calc-hidden');updateOffer();clearInterval(ticker);ticker=setInterval(updateOffer,1000);
-  }
-  q('#calculate-btn').addEventListener('click',calculate);
-
-  q('#order-btn').addEventListener('click',()=>{
-    if(!current)return;updateOffer();const finalTotal=current.discountActive?current.total*.95:current.total;
-    const summary=[current.service.label,current.people+' чел.',current.billableHours+' оплачиваемых ч',taxLabels[current.tax],current.km?current.km+' км за МКАД':'Москва / до МКАД',current.vehicleKey!=='none'?vehicles[current.vehicleKey].label:'без автомобиля','Итого: '+money(finalTotal)+(current.discountActive?' (скидка 5% зафиксирована)':'')].join(' · ');
-    q('#calculation-summary').value=summary;q('#order-summary').textContent=summary;q('#order-form-wrap').classList.remove('calc-hidden');q('#order-form-wrap').scrollIntoView({behavior:'smooth',block:'center'});setTimeout(()=>q('input[name="company"]').focus(),400);
-  });
-
-  const form=q('#calc-order-form');
-  form.addEventListener('submit',e=>{
-    e.preventDefault();const status=q('.calc-form-status'), required=[...form.querySelectorAll('[required]')];let valid=true;
-    required.forEach(field=>{const check=field.type==='checkbox'?field.checked:field.value.trim()!=='';if(field.type!=='checkbox')field.classList.toggle('calc-invalid',!check);if(!check)valid=false;});
-    if(!valid){status.className='calc-form-status error';status.textContent='Заполните обязательные поля и подтвердите согласие.';return;}
-    status.className='calc-form-status success';status.textContent='Заявка сформирована. В тестовой версии отправка в CRM ещё не подключена.';
-  });
+  const vehicles={none:{l:'Без автомобиля'},porter:{l:'Porter 1 т',cash:[1400,5600],vat5:[1582,7910],vat22:[1792,8960],km:30},gazelle:{l:'Газель 1,5 т',cash:[1900,7600],vat5:[2147,10735],vat22:[2432,12160],km:40},truck5:{l:'Авто 5 т',cash:[2400,9600],vat5:[2712,13560],vat22:[3072,21504],km:50}};
+  const taxName={cash:'наличный расчёт',vat5:'НДС 5%',vat22:'НДС 22%'}; const $=s=>panel.querySelector(s); const money=n=>new Intl.NumberFormat('ru-RU',{maximumFractionDigits:0}).format(Math.round(n))+' ₽';
+  $('#gc-vehicle').addEventListener('change',()=>$('.gc-vh').classList.toggle('gc-hide',$('#gc-vehicle').value==='none'));
+  let calc=null,tick=null,deadline=0;
+  function paintTimer(){if(!calc)return;const left=Math.max(0,deadline-Date.now()),m=Math.floor(left/60000),sec=Math.floor(left%60000/1000),active=left>0;$('#gc-timer').textContent=String(m).padStart(2,'0')+':'+String(sec).padStart(2,'0');$('#gc-offer').classList.toggle('expired',!active);calc.discount=active;$('#gc-saving').textContent=active?money(calc.total*.05):'Срок акции истёк';$('#gc-discount').textContent=money(active?calc.total*.95:calc.total);$('#gc-order').textContent=active?'Заказать со скидкой 5%':'Заказать по расчёту';}
+  $('#gc-calc').addEventListener('click',()=>{const s=rates[$('#gc-service').value],tax=$('#gc-tax').value,people=Math.max(1,+$('#gc-people').value||1),hours=Math.max(1,+$('#gc-hours').value||1),km=Math.max(0,+$('#gc-km').value||0),extra=km===0?0:km<=50?1:2,bill=Math.max(4,hours+extra),labor=s[tax]*people*bill,vkey=$('#gc-vehicle').value;let vc=0,vtext='';if(vkey!=='none'){const v=vehicles[vkey],vh=Math.max(1,+$('#gc-vhours').value||1),[rate,min]=v[tax],time=Math.max(vh*rate,min),dist=km*v.km;vc=time+dist;vtext=`${v.l}: ${money(time)}${km?` + ${km} км × ${v.km} ₽ = ${money(dist)}`:''}`;}calc={s,tax,people,bill,km,vkey,labor,vc,total:labor+vc,discount:true};$('#gc-labor').textContent=money(labor);$('#gc-total').textContent=money(calc.total);$('#gc-vrow').classList.toggle('gc-hide',vkey==='none');if(vkey!=='none')$('#gc-vcost').textContent=money(vc);$('#gc-details').textContent=`${people} чел. × ${bill} оплачиваемых ч × ${s[tax].toLocaleString('ru-RU')} ₽/ч (${taxName[tax]}).${extra?` Выезд за МКАД: +${extra} ч.`:''}${vtext?' '+vtext+'.':''}`;$('#gc-result').classList.remove('gc-hide');deadline=Date.now()+300000;clearInterval(tick);paintTimer();tick=setInterval(paintTimer,1000);});
+  $('#gc-order').addEventListener('click',()=>{if(!calc)return;paintTimer();const final=calc.discount?calc.total*.95:calc.total;$('#gc-summary').textContent=[calc.s.l,calc.people+' чел.',calc.bill+' оплачиваемых ч',taxName[calc.tax],calc.km?calc.km+' км за МКАД':'Москва / до МКАД',vehicles[calc.vkey].l,'Итого: '+money(final)+(calc.discount?' (скидка 5% зафиксирована)':'')].join(' · ');$('#gc-form').classList.remove('gc-hide');$('#gc-form').scrollIntoView({behavior:'smooth',block:'center'});});
+  $('#gc-submit').addEventListener('click',()=>{const inputs=[...$('#gc-form').querySelectorAll('input[name]')],required=inputs.slice(0,3),status=$('#gc-status');let ok=true;required.forEach(x=>{const valid=x.value.trim()!=='';x.classList.toggle('gc-invalid',!valid);if(!valid)ok=false});if(!$('#gc-consent').checked)ok=false;status.className='gc-status '+(ok?'ok':'bad');status.textContent=ok?'Заявка сформирована. Отправку в CRM подключим отдельно.':'Заполните компанию, контакт, телефон и подтвердите согласие.';});
 })();
